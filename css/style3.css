@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #c86fc9, #6fa1d2);
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.game {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.5vmin;
+}
+
+.Box {
+    height: 12vmin;
+    width: 12vmin;
+    border-radius: 1rem;
+    border: none;
+    background: #f7c7db;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 5vmin;
+    color: #333;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+}
+
+.Box:hover {
+    background: #dba4c7;
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.Box:disabled {
+    cursor: not-allowed;
+    background: #e5a4b1;
+}
+
+#reset-btn,
+#new-btn,
+#back-btn {
+    padding: 1rem;
+    font-size: 1.25rem;
+    background: #8e518d;
+    color: white;
+    border-radius: 1rem;
+    border: none;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#reset-btn:hover,
+#new-btn:hover,
+#back-btn:hover {
+    background: #713b6f;
+    transform: scale(1.05);
+}
+
+#msg {
+    color: #f7c7db;
+    font-size: 8vmin;
+}
+
+.msg-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 4rem;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+}
+
+.hide {
+    display: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.Box {
+    animation: fadeIn 0.5s ease-in-out;
+}
